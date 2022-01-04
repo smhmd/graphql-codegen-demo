@@ -1,5 +1,8 @@
 {
   "root": true,
   "env": { "browser": true, "es2021": true, "node": true },
-  "extends": ["next", "plugin:@typescript-eslint/recommended"]
+  "extends": ["next", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off"
+  }
 }
