@@ -1,0 +1,49 @@
+# This file uses local schema files for faster generation.
+
+overwrite: true
+generates:
+  api/generated/client.ts:
+    schema: api/generated/schema.json
+    documents: api/**/*.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      fetcher:
+        func: '../../lib/hooks#useFetch'
+        isReactHook: true
+  api/generated/server.ts:
+    schema: api/generated/schema.json
+    documents: api/**/*.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request
+      - typescript-msw
+
+  content/generated/server.ts:
+    schema: content/generated/schema.json
+    documents: content/**/*.gql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request
+      - typescript-msw
+
+config:
+  scalars:
+    Upload: string
+    DateTime: string
+    Email: string
+    GraphQLTimeISO: string
+    LimitedString: string
+    Password: string
+    URL: string
+    Date: string
+    Hex: string
+    Json: object | Array<unknown> | string | boolean
+    Long: string
+    RGBAHue: string
+    RGBATransparency: string
+    RichTextAST: object

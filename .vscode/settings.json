@@ -1,0 +1,16 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "graphql"
+  ],
+  "files.associations": {
+    "*.gql": "graphql",
+    ".graphqlrc": "yaml"
+  },
+  "files.exclude": {
+    "*/generated": true
+  }
+}

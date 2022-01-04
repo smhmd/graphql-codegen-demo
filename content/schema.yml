@@ -1,0 +1,13 @@
+# This file generates the schema locally
+# to be used by the main codegen config.
+overwrite: true
+schema:
+  - '${CMS_URI}':
+      headers:
+        Authorization: 'Bearer ${CMS_TOKEN}'
+generates:
+  content/generated/schema.json:
+    plugins:
+      - introspection
+    config:
+      minify: true

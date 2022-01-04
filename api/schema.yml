@@ -1,0 +1,10 @@
+# This file generates the schema locally
+# to be used by the main codegen config.
+overwrite: true
+schema: ${NEXT_PUBLIC_ENDPOINT_URI}
+generates:
+  api/generated/schema.json:
+    plugins:
+      - introspection
+    config:
+      minify: true
